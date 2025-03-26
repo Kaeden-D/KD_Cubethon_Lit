@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
 
-    public PlayerMovement movement;
+    public PlayerMovement1 movement1;
+    public PlayerMovement2 movement2;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,7 +15,8 @@ public class PlayerCollision : MonoBehaviour
         {
 
             Debug.Log("We hit an obstacle");
-            movement.enabled = false;
+            movement1.enabled = false;
+            movement2.enabled = false;
             FindObjectOfType<GameManger>().EndGame();
 
         }

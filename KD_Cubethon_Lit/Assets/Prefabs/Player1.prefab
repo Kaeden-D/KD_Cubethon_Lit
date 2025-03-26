@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1963791920135499899}
   - component: {fileID: 5878087820634844437}
   - component: {fileID: 2770384648112121909}
-  - component: {fileID: 107266481015281332}
   - component: {fileID: 7236877341452188577}
+  - component: {fileID: 4978650419274678089}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &107266481015281332
+--- !u!114 &7236877341452188577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691230278051505848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f80ec54b01fd9442942d6ea79c637a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement1: {fileID: 4978650419274678089}
+  movement2: {fileID: 0}
+--- !u!114 &4978650419274678089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,16 +164,3 @@ MonoBehaviour:
   rb: {fileID: 2770384648112121909}
   forward_force: 1500
   sideway_force: 30
---- !u!114 &7236877341452188577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3691230278051505848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f80ec54b01fd9442942d6ea79c637a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 107266481015281332}

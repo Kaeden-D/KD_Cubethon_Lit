@@ -39,5 +39,17 @@ public class GameManger : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
-        
+
+    private void FixedUpdate()
+    {
+
+        if (Input.GetKey("r"))
+        {
+
+            Invoke("Restart", 0.2f);
+
+        }
+
+    }
+
 }
