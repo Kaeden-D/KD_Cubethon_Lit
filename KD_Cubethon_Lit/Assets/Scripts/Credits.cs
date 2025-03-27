@@ -5,11 +5,13 @@ using UnityEngine;
 public class Credits : MonoBehaviour
 {
 
-    public void Quit()
+    public LevelCompleteBehavior level_complete;
+
+    public void Complete_Restart()
     {
 
-        Debug.Log("Game Quit");
-        Application.Quit();
+        Debug.Log("Game Restarted");
+        level_complete.InvokeNextLevel(0.2f);
 
     }
 

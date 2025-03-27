@@ -10,13 +10,39 @@ public class EndTriggerBehavior : MonoBehaviour
     public LevelCompleteBehavior levelCompleteBehavior;
     public CameraBehavior cameraBehavior;
 
-    private void OnTriggerEnter()
+    public bool player1_enter = false;
+    public bool player2_enter = false;
+
+    private void OnTriggerEnter(UnityEngine.Collider collision)
     {
 
-        scoreBehavior.textChange(false);
-        cameraBehavior.gameWon = true;
-        gameManager.CompleteLevel();
-        levelCompleteBehavior.InvokeNextLevel(3f);
+        if(collision.gameObject.name == "Player1")
+        {
+
+            player1_enter = true;
+
+        }
+        if(collision.gameObject.name == "Player2")
+        {
+
+            player2_enter = true;
+
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+
+        if(player1_enter && player2_enter)
+        {
+
+            scoreBehavior.textChange(false);
+            cameraBehavior.gameWon = true;
+            gameManager.CompleteLevel();
+            levelCompleteBehavior.InvokeNextLevel(3f);
+
+        }
 
     }
 

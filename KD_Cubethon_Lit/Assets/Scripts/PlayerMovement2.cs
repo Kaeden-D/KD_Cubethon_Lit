@@ -11,11 +11,23 @@ public class PlayerMovement2 : MonoBehaviour
     public float gravity;
     public float vertical_force;
 
+    public bool grav = true;
+
+    private void Start()
+    {
+        rb.velocity = Vector3.zero;
+    }
+
     private void FixedUpdate()
     {
 
         rb.AddForce(0, 0, forward_force * Time.deltaTime);
-        rb.AddForce(gravity * Time.deltaTime, -0.075f, 0);
+        if (grav)
+        {
+
+            rb.AddForce(gravity * Time.deltaTime, -0.078f, 0);
+
+        }
 
         if (Input.GetKey("w") || Input.GetKey("up"))
         {
@@ -37,6 +49,14 @@ public class PlayerMovement2 : MonoBehaviour
             FindObjectOfType<GameManger>().EndGame();
 
         }
+
+    }
+
+    public void Cheat()
+    {
+
+        transform.position = transform.position + new Vector3(-2, 0, 0);
+        grav = false;
 
     }
 

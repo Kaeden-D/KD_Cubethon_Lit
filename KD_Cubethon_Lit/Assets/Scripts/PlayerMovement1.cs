@@ -11,11 +11,18 @@ public class PlayerMovement1 : MonoBehaviour
     public float gravity;
     public float sideway_force;
 
+    public bool grav = true;
+
     private void FixedUpdate()
     {
 
         rb.AddForce(0, 0, forward_force * Time.deltaTime);
-        rb.AddForce(0, -gravity * Time.deltaTime, 0);
+        if (grav)
+        {
+
+            rb.AddForce(0, -gravity * Time.deltaTime, 0);
+
+        }
 
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
@@ -37,6 +44,14 @@ public class PlayerMovement1 : MonoBehaviour
             FindObjectOfType<GameManger>().EndGame();
 
         }
+
+    }
+
+    public void Cheat()
+    {
+
+        transform.position = transform.position + new Vector3(0, 2, 0);
+        grav = false;
 
     }
 

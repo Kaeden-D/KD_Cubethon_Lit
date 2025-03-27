@@ -7,6 +7,7 @@ public class PlayerCollision : MonoBehaviour
 
     public PlayerMovement1 movement1;
     public PlayerMovement2 movement2;
+    public CameraBehavior cameraBehavior;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,6 +16,7 @@ public class PlayerCollision : MonoBehaviour
         {
 
             Debug.Log("We hit an obstacle");
+            cameraBehavior.gameLost = true;
             movement1.enabled = false;
             movement2.enabled = false;
             FindObjectOfType<GameManger>().EndGame();

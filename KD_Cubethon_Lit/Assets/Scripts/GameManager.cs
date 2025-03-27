@@ -11,6 +11,8 @@ public class GameManger : MonoBehaviour
     public float restartDelay = 1f;
 
     public GameObject completeLevelUI;
+    public PlayerMovement1 player1;
+    public PlayerMovement2 player2;
 
     public void CompleteLevel()
     {
@@ -40,6 +42,14 @@ public class GameManger : MonoBehaviour
 
     }
 
+    void Cheat()
+    {
+
+        player1.Cheat();
+        player2.Cheat();
+
+    }
+
     private void FixedUpdate()
     {
 
@@ -47,6 +57,13 @@ public class GameManger : MonoBehaviour
         {
 
             Invoke("Restart", 0.2f);
+
+        }
+
+        if (Input.GetKey("c"))
+        {
+
+            Invoke("Cheat", 0.2f);
 
         }
 

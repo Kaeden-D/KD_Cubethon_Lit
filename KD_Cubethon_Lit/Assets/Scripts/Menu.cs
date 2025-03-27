@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    
+
+    public LevelCompleteBehavior level_complete;
+
     public void StartGame()
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Game Started");
+        level_complete.InvokeNextLevel(0.2f);
 
     }
 
