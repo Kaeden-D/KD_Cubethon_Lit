@@ -9,10 +9,7 @@ public class LevelCompleteBehavior : MonoBehaviour
     public void LoadNextLevel()
     {
 
-        Debug.Log(SceneManager.sceneCount);
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log((((SceneManager.GetActiveScene().buildIndex) % SceneManager.sceneCount) + 1));
-        SceneManager.LoadScene(((SceneManager.GetActiveScene().buildIndex) % SceneManager.sceneCount) + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
